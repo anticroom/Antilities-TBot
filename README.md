@@ -2,6 +2,8 @@
 
 ## What is this?
 Antilities is a pretty basic triggerbot mod which is meant to be hard to find if someone is doing a basic ss on you. It is designed to be lightweight and runs on Fabric 1.21.11.
+### Servers That Detected It!
+- mcpvp.club
 
 ## Features
 * **Smart Delay:** Uses vanilla attack cooldowns to mimic natural player timing.
