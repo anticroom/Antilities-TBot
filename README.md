@@ -12,3 +12,6 @@ Antilities is a pretty basic triggerbot mod which is meant to be hard to find if
 * **Filter Toggles:** Ability to toggle attacks on baby mobs.
 * **Screen Safety:** Automatically pauses the triggerbot when any in-game menu or container is open.
 * **Minimal Footprint:** Simple command-based configuration (`/-tbot`) and a single keybind toggle.
+
+## Disclaimer!
+Using this mod involves a risk of being banned for cheating. Check server rules before use.
