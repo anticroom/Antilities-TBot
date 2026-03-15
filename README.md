@@ -4,6 +4,9 @@
 
 Antilities is a lightweight mod designed to be hard to find while bieng VERY configureable compared to other free alternatives. It is built for Fabric 1.21.1 and focuses on closeted combat cheats.
 
+## Dependencies
+* [Cloth Config API](https://modrinth.com/mod/cloth-config)
+
 ### Servers That Detected It!
 * mcpvp.club
 
