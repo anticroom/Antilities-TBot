@@ -22,8 +22,8 @@ Antilities is a lightweight mod designed to be hard to find while bieng VERY con
 * **Target Lock:** Stays glued to your current target for a set time to prevent "shuffling" between enemies.
 * **Hit Flick:** Simulates a subtle vertical mouse flick when you land a hit to look more human on recordings.
 * **Panic Swing:** Randomly swings when you get comboed or hit from just outside your reach to mimic a real player's reaction.
-* **Fist Sword-Delay:** Forces hand/fist attacks to follow sword timing to prevent unnatural spamming.
-* **Advanced Filters:** Toggles to target only players, only activate when holding weapons, or ignore babies.
+* **Fist Delay:** Forces your fist attacks to follow sword timing to prevent unnatural spamming.
+* **Filters:** Toggles to target only players, only activate when holding weapons, or ignore babies.
 * **Safety:** Pauses automatically while you are in menus, shielding, or if the enemy is blocking.
 ### Aim Assist
 
