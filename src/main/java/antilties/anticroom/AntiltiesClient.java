@@ -82,8 +82,8 @@ public class AntiltiesClient implements ClientModInitializer {
             AIM_ASSIST.onTick();
         });
 
-        HudRenderCallback.EVENT.register((guiGraphics, tickTracker) -> {
-            float partialTicks = tickTracker.getGameTimeDeltaPartialTick(true);
+        HudRenderCallback.EVENT.register((guiGraphics, tickCounter) -> {
+            float partialTicks = tickCounter.getGameTimeDeltaPartialTick(true);
             AIM_ASSIST.onFrame(partialTicks);
 
             if (!ConfigManager.config.aimAssistEnabled || !ConfigManager.config.renderFovCircle) return;

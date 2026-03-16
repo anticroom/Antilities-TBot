@@ -31,6 +31,9 @@ public class TriggerBot {
     
     private int fistDelayTimer = 0;
 
+    private long firstTargetSeenTime = -1;
+    private long currentReactionWait = 0;
+
     public void onTick() {
         ConfigManager.ConfigData config = ConfigManager.config;
 
@@ -39,6 +42,7 @@ public class TriggerBot {
             lastHealth = -1f;
             currentFlickOffset = 0f;
             fistDelayTimer = 0;
+            firstTargetSeenTime = -1;
             return;
         }
 
@@ -60,7 +64,7 @@ public class TriggerBot {
         if (config.tbotWeaponOnly && !isWeapon()) {
             lockedPlayer = null;
             currentTarget = null;
-            lastHealth = mc.player.getHealth();
+            firstTargetSeenTime = -1;
             return;
         }
 
@@ -100,17 +104,29 @@ public class TriggerBot {
         if (targeted != currentTarget) {
             currentTarget = targeted;
             targetTicks = 0;
+            
+            if (currentTarget != null) {
+                firstTargetSeenTime = System.currentTimeMillis();
+                currentReactionWait = ThreadLocalRandom.current().nextLong(120, 210);
 
-            if (config.targetDelayEnabled && targeted != null) {
-                int min = config.targetDelayMin;
-                int max = Math.max(min, config.targetDelayMax);
-                requiredTargetTicks = ThreadLocalRandom.current().nextInt(min, max + 1);
+                if (config.targetDelayEnabled) {
+                    int min = config.targetDelayMin;
+                    int max = Math.max(min, config.targetDelayMax);
+                    requiredTargetTicks = ThreadLocalRandom.current().nextInt(min, max + 1);
+                } else {
+                    requiredTargetTicks = 0;
+                }
             } else {
+                firstTargetSeenTime = -1;
                 requiredTargetTicks = 0;
             }
         }
 
         if (currentTarget == null) return;
+
+        if (firstTargetSeenTime != -1 && (System.currentTimeMillis() - firstTargetSeenTime) < currentReactionWait) {
+            return;
+        }
 
         if (targetTicks < requiredTargetTicks) {
             targetTicks++;

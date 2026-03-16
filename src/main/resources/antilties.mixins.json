@@ -1,14 +1,14 @@
 {
-	"required": true,
-	"package": "antilties.anticroom.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+    "required": true,
+    "package": "antilties.anticroom.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "MouseHandlerMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
 }
